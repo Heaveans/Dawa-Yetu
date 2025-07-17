@@ -1,6 +1,7 @@
-import { Search, Leaf, Database, PlusCircle, BookOpen, Camera, Users, Star } from "lucide-react";
+import { Search, Leaf, Database, PlusCircle, BookOpen, Camera, Users, Star, Mic, Bot, MapPin, Zap, Crown, TrendingUp, Heart, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/ui/search-bar";
 import heroImage from "@/assets/hero-herbal.jpg";
 import herbsImage from "@/assets/herbs-collection.jpg";
@@ -47,8 +48,44 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const featuredStats = [
     { label: "Traditional Remedies", value: "1,247", icon: Leaf },
-    { label: "Verified Plants", value: "892", icon: Star },
+    { label: "AI Identifications", value: "25,892", icon: Bot },
+    { label: "Elder Stories", value: "342", icon: Star },
     { label: "Community Members", value: "15,420", icon: Users },
+  ];
+
+  const aiFeatures = [
+    {
+      id: "ai-herbalist",
+      title: "AI Herbalist Chat",
+      description: "Ask our AI questions about African herbal medicine",
+      icon: Bot,
+      gradient: "bg-gradient-forest",
+      badge: "New"
+    },
+    {
+      id: "cultural-map",
+      title: "Cultural Map",
+      description: "Explore herbs by tribe and region",
+      icon: MapPin,
+      gradient: "bg-gradient-earth",
+      badge: "Popular"
+    },
+    {
+      id: "elder-stories",
+      title: "Elder Stories",
+      description: "Listen to traditional healing wisdom",
+      icon: Heart,
+      gradient: "bg-gradient-sunset",
+      badge: "Featured"
+    },
+    {
+      id: "premium",
+      title: "Premium Research",
+      description: "Access advanced analytics and exports",
+      icon: Crown,
+      gradient: "bg-gradient-forest",
+      badge: "Pro"
+    }
   ];
 
   return (
@@ -100,7 +137,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* Stats Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {featuredStats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -117,6 +154,49 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      {/* AI Features Section */}
+      <section className="bg-gradient-earth/10 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-gradient-forest text-primary-foreground">DawaYetu 2.0</Badge>
+            <h2 className="text-3xl font-bold text-foreground mb-4">AI-Powered Heritage Preservation</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Experience the next generation of traditional medicine preservation with advanced AI features 
+              and community-driven wisdom sharing.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {aiFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <Card 
+                  key={feature.id} 
+                  className="group cursor-pointer shadow-herb hover:shadow-natural transition-all duration-300 hover:scale-105 animate-grow-in border-0 relative overflow-hidden"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                  onClick={() => onNavigate?.(feature.id)}
+                >
+                  <div className="absolute top-3 right-3">
+                    <Badge variant="secondary" className="text-xs">
+                      {feature.badge}
+                    </Badge>
+                  </div>
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 ${feature.gradient} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <CardTitle className="text-lg mb-2 text-foreground">{feature.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </section>
 

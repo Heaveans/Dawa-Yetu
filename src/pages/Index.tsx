@@ -3,6 +3,11 @@ import { Navigation } from "@/components/ui/navigation";
 import { HomePage } from "@/components/home/HomePage";
 import { PlantIdentifyPage } from "@/components/identify/PlantIdentifyPage";
 import { HerbalDatabasePage } from "@/components/database/HerbalDatabasePage";
+import { AIHerbalistPage } from "@/components/ai/AIHerbalistPage";
+import { CulturalMapPage } from "@/components/cultural/CulturalMapPage";
+import { ElderStoriesPage } from "@/components/elder/ElderStoriesPage";
+import { OfflineModePage } from "@/components/offline/OfflineModePage";
+import { PremiumDashboard } from "@/components/premium/PremiumDashboard";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -15,10 +20,20 @@ const Index = () => {
         return <PlantIdentifyPage onNavigate={setCurrentPage} />;
       case "database":
         return <HerbalDatabasePage onNavigate={setCurrentPage} />;
+      case "ai-herbalist":
+        return <AIHerbalistPage onNavigate={setCurrentPage} />;
+      case "cultural-map":
+        return <CulturalMapPage onNavigate={setCurrentPage} />;
+      case "elder-stories":
+        return <ElderStoriesPage onNavigate={setCurrentPage} />;
+      case "offline-mode":
+        return <OfflineModePage onNavigate={setCurrentPage} />;
+      case "premium":
+        return <PremiumDashboard onNavigate={setCurrentPage} />;
       case "submit":
         return <div className="min-h-screen bg-background p-8"><div className="text-center"><h1 className="text-3xl font-bold mb-4">Submit Remedy</h1><p className="text-muted-foreground">Share your traditional healing knowledge (Coming Soon)</p></div></div>;
       case "community":
-        return <div className="min-h-screen bg-background p-8"><div className="text-center"><h1 className="text-3xl font-bold mb-4">Community Stories</h1><p className="text-muted-foreground">Cultural stories and community discussions (Coming Soon)</p></div></div>;
+        return <ElderStoriesPage onNavigate={setCurrentPage} />;
       case "learn":
         return <div className="min-h-screen bg-background p-8"><div className="text-center"><h1 className="text-3xl font-bold mb-4">Learn</h1><p className="text-muted-foreground">Educational content about traditional medicine (Coming Soon)</p></div></div>;
       default:

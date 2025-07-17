@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Menu, X, Leaf, Home, Database, PlusCircle, Users, BookOpen, User } from "lucide-react";
+import { Search, Menu, X, Leaf, Home, Database, PlusCircle, Users, BookOpen, User, Map, Mic, Bot, Star, Settings, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -20,6 +20,14 @@ export function Navigation({ currentPage = "home", onPageChange }: NavigationPro
     { id: "learn", label: "Learn", icon: BookOpen },
   ];
 
+  const advancedNavItems = [
+    { id: "cultural-map", label: "Cultural Map", icon: Map },
+    { id: "ai-herbalist", label: "AI Herbalist", icon: Bot },
+    { id: "elder-stories", label: "Elder Stories", icon: Star },
+    { id: "offline-mode", label: "Offline Mode", icon: Settings },
+    { id: "premium", label: "Premium", icon: Crown },
+  ];
+
   const handleNavClick = (pageId: string) => {
     onPageChange?.(pageId);
     setIsMenuOpen(false);
@@ -27,6 +35,32 @@ export function Navigation({ currentPage = "home", onPageChange }: NavigationPro
 
   return (
     <nav className="bg-card border-b border-border shadow-natural">
+      {/* Advanced Menu Bar */}
+      <div className="bg-gradient-earth border-b border-border/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-center space-x-1 py-2 overflow-x-auto">
+            {advancedNavItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => handleNavClick(item.id)}
+                  className={cn(
+                    "flex items-center space-x-1 text-xs shrink-0 text-muted-foreground hover:text-foreground transition-colors",
+                    currentPage === item.id && "text-primary font-medium"
+                  )}
+                >
+                  <Icon className="w-3 h-3" />
+                  <span className="hidden sm:block">{item.label}</span>
+                </Button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

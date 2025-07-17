@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Camera, Upload, Loader2, CheckCircle, AlertTriangle, Star, MapPin } from "lucide-react";
+import { Camera, Upload, Loader2, CheckCircle, AlertTriangle, Star, MapPin, Mic, Bot, Globe, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface PlantIdentifyPageProps {
   onNavigate?: (page: string) => void;
@@ -29,8 +30,28 @@ export function PlantIdentifyPage({ onNavigate }: PlantIdentifyPageProps) {
   const [isIdentifying, setIsIdentifying] = useState(false);
   const [result, setResult] = useState<IdentificationResult | null>(null);
   const [textInput, setTextInput] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [isListening, setIsListening] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
+
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "sw", name: "Kiswahili" },
+    { code: "yo", name: "Yoruba" },
+    { code: "zu", name: "isiZulu" },
+    { code: "xh", name: "isiXhosa" },
+    { code: "lg", name: "Luganda" },
+  ];
+
+  const handleVoiceSearch = () => {
+    setIsListening(true);
+    // Simulate voice recognition
+    setTimeout(() => {
+      setTextInput("African potato");
+      setIsListening(false);
+    }, 2000);
+  };
 
   // Mock identification function
   const identifyPlant = async () => {
@@ -184,6 +205,58 @@ export function PlantIdentifyPage({ onNavigate }: PlantIdentifyPageProps) {
               </CardContent>
             </Card>
 
+            {/* AI Voice Search */}
+            <Card className="shadow-herb border-primary/20">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Bot className="w-5 h-5 text-primary" />
+                  <span>AI Voice Search</span>
+                  <Badge className="bg-gradient-forest text-primary-foreground">New</Badge>
+                </CardTitle>
+                <CardDescription>
+                  Speak in your local language - AI understands Swahili, Yoruba, Zulu and more
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div>
+                    <Label htmlFor="language">Language</Label>
+                    <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select language" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {languages.map((lang) => (
+                          <SelectItem key={lang.code} value={lang.code}>
+                            {lang.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="flex items-end">
+                    <Button
+                      onClick={handleVoiceSearch}
+                      disabled={isListening}
+                      className="w-full bg-gradient-forest hover:opacity-90"
+                    >
+                      {isListening ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          Listening...
+                        </>
+                      ) : (
+                        <>
+                          <Mic className="w-4 h-4 mr-2" />
+                          Voice Search
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Text Search Alternative */}
             <Card className="shadow-herb">
               <CardHeader>
@@ -195,13 +268,24 @@ export function PlantIdentifyPage({ onNavigate }: PlantIdentifyPageProps) {
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="plant-name">Plant Name</Label>
-                  <Input
-                    id="plant-name"
-                    value={textInput}
-                    onChange={(e) => setTextInput(e.target.value)}
-                    placeholder="Enter plant name..."
-                    className="mt-1"
-                  />
+                  <div className="relative">
+                    <Input
+                      id="plant-name"
+                      value={textInput}
+                      onChange={(e) => setTextInput(e.target.value)}
+                      placeholder="Enter plant name..."
+                      className="mt-1 pr-20"
+                    />
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={handleVoiceSearch}
+                      disabled={isListening}
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2"
+                    >
+                      <Mic className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
                 
                 <div className="flex flex-wrap gap-2">
