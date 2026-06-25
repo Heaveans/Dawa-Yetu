@@ -6,6 +6,14 @@ DawaYetu is an open-source AI platform that preserves, digitizes, and analyzes i
 
 Across Africa, climate change, habitat degradation, and biodiversity loss are threatening medicinal plant ecosystems and the traditional ecological knowledge that communities have relied on for generations. DawaYetu helps safeguard this knowledge by combining community-driven documentation, AI-assisted plant identification, and a searchable biodiversity knowledge repository.
 
+## Founder
+
+**Gard Ouma**
+Electrical & Communication Engineering Student
+AI & Web Innovator
+
+Founder and lead developer of DawaYetu, an open-source platform focused on biodiversity conservation, indigenous ecological knowledge preservation, and climate adaptation using artificial intelligence and community-driven data systems.
+
 ## The Challenge
 
 Many indigenous knowledge systems remain undocumented and are at risk of being lost due to:
