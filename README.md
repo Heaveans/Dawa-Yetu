@@ -58,6 +58,20 @@ Support biodiversity conservation by highlighting plant habitats, ecological imp
 
 Designed to support African communities through accessible and localized knowledge sharing.
 
+## Screenshots
+
+> The following images demonstrate the current prototype and interface of DawaYetu.
+
+### Home Interface
+
+![Home](./docs/images/home.png)
+
+### Plant Identification Module
+
+![Plant Identification](./docs/images/identify.png)
+
+> *Note: DawaYetu is currently in active prototype stage. Features are under continuous development.*
+
 ## Climate Impact
 
 DawaYetu contributes to:
@@ -95,6 +109,39 @@ Current development focuses on:
 ## Vision
 
 To become Africa's leading open-source biodiversity and indigenous knowledge platform, empowering communities, researchers, and conservation organizations to preserve biodiversity and strengthen climate resilience through technology.
+
+## Roadmap
+
+### Phase 1 — MVP (Current Stage)
+
+* Biodiversity knowledge repository
+* Community plant documentation system
+* Basic UI for exploration and search
+* Initial prototype deployment
+
+### Phase 2 — AI Integration
+
+* AI-powered plant identification using image recognition
+* Knowledge structuring and validation system
+* Duplicate detection and classification improvements
+
+### Phase 3 — Community Scaling
+
+* Mobile-first optimization
+* Local language support (Kiswahili and regional languages)
+* Expanded community contributor network
+* Verified contributor system
+
+### Phase 4 — Climate Intelligence Layer
+
+* Biodiversity mapping and geolocation insights
+* Climate vulnerability indicators for plant species
+* Ecosystem trend tracking
+* Data support for conservation and research organizations
+
+### Long-Term Vision
+
+To become a continental open-source biodiversity intelligence platform supporting climate adaptation, indigenous knowledge preservation, and ecosystem resilience across Africa.
 
 ## Installation
 
