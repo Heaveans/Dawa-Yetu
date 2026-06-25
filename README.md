@@ -86,8 +86,7 @@ DawaYetu contributes to:
 By preserving climate-vulnerable medicinal plant knowledge and ecosystems, DawaYetu helps strengthen local adaptive capacity and intergenerational knowledge transfer.
 
 ## Current Status
-
-🚀 Active Prototype
+ Active Prototype
 
 Current development focuses on:
 
