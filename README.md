@@ -1,73 +1,108 @@
-# Welcome to your Lovable project
+# DawaYetu
 
-## Project info
+### AI-Powered Biodiversity & Indigenous Knowledge Platform
 
-**URL**: https://lovable.dev/projects/7eefb233-7a02-4404-a14b-69cc28b6177e
+DawaYetu is an open-source AI platform that preserves, digitizes, and analyzes indigenous medicinal plant knowledge while supporting biodiversity conservation, climate adaptation, and community resilience.
 
-## How can I edit this code?
+Across Africa, climate change, habitat degradation, and biodiversity loss are threatening medicinal plant ecosystems and the traditional ecological knowledge that communities have relied on for generations. DawaYetu helps safeguard this knowledge by combining community-driven documentation, AI-assisted plant identification, and a searchable biodiversity knowledge repository.
 
-There are several ways of editing your application.
+## The Challenge
 
-**Use Lovable**
+Many indigenous knowledge systems remain undocumented and are at risk of being lost due to:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7eefb233-7a02-4404-a14b-69cc28b6177e) and start prompting.
+* Climate change and ecosystem degradation
+* Biodiversity loss
+* Urbanization and cultural erosion
+* Limited access to digital preservation tools
+* Lack of structured biodiversity databases accessible to local communities
 
-Changes made via Lovable will be committed automatically to this repo.
+As medicinal plant habitats become increasingly vulnerable, the loss of traditional ecological knowledge also weakens community climate adaptation capacity.
 
-**Use your preferred IDE**
+## Our Solution
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+DawaYetu provides a digital platform where communities, researchers, students, and conservation practitioners can:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* Document medicinal plants and indigenous knowledge
+* Upload plant observations and photographs
+* Access AI-assisted plant identification
+* Explore biodiversity information through a searchable knowledge repository
+* Support conservation and climate adaptation efforts through community-generated data
 
-Follow these steps:
+## Key Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### AI Plant Identification
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Upload a plant image and receive AI-assisted species suggestions.
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Biodiversity Knowledge Repository
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Search medicinal plants by scientific name, local name, medicinal use, habitat, or conservation relevance.
+
+### Community Knowledge Contributions
+
+Enable communities to document and preserve traditional ecological knowledge.
+
+### Climate Adaptation & Conservation Insights
+
+Support biodiversity conservation by highlighting plant habitats, ecological importance, and climate-related risks.
+
+### Multilingual Accessibility
+
+Designed to support African communities through accessible and localized knowledge sharing.
+
+## Climate Impact
+
+DawaYetu contributes to:
+
+* Biodiversity conservation
+* Climate adaptation
+* Indigenous knowledge preservation
+* Community resilience
+* Nature-based solutions
+* Sustainable ecosystem stewardship
+
+By preserving climate-vulnerable medicinal plant knowledge and ecosystems, DawaYetu helps strengthen local adaptive capacity and intergenerational knowledge transfer.
+
+## Current Status
+
+🚀 Active Prototype
+
+Current development focuses on:
+
+* Biodiversity knowledge repository
+* AI-assisted plant identification
+* Community contribution workflows
+* Indigenous knowledge documentation tools
+
+## Technology Stack
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* Shadcn/UI
+* Supabase
+* AI-powered image recognition models
+
+## Vision
+
+To become Africa's leading open-source biodiversity and indigenous knowledge platform, empowering communities, researchers, and conservation organizations to preserve biodiversity and strengthen climate resilience through technology.
+
+## Installation
+
+```bash
+git clone <repository-url>
+cd dawayetu
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Contributions are welcome from developers, researchers, conservationists, students, indigenous knowledge holders, and biodiversity practitioners.
 
-**Use GitHub Codespaces**
+Together, we can preserve ecological knowledge and protect biodiversity for future generations.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## License
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7eefb233-7a02-4404-a14b-69cc28b6177e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Open Source
